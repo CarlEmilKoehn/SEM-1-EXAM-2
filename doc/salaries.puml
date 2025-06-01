@@ -1,0 +1,29 @@
+@startuml salariesDiagram
+object Main{
+
+}
+abstract class Employee{
++ calculateSalary(){abstract}
+}
+class MonthlyEmployee{
+- salary
++ calculateSalary()
+}
+
+
+class HourlyEmployee{
+- numberOfHours
+- payPrHour
++ calculateSalary()
+}
+class CommissionEmployee{
+-baseSalary
+-salesAmount
+-commissionPercentage
++ calculateSalary()
+}
+Main *-- Employee
+Employee <|-- MonthlyEmployee: Is
+Employee <|-- HourlyEmployee: Is
+Employee <|-- CommissionEmployee: Is
+@enduml
